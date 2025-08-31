@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NetFlix Gpt
   - create app 
   - Configure the tailwind css 
@@ -17,3 +18,7 @@
             redirected to Browse page
         -Browse page 
             
+=======
+# Netflix-Gpt
+NetFlix app With GPT Api
+>>>>>>> f7b27b0275a1372f51d5d3cc3d59eef87477e675
