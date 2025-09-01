@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
-import './App.css';
-
+import Body from './Components/Body'
+import Header from './Components/Header';
 function App() {
   return (
-    <div className="App text=xl text-green-500 font-bold">
-     Wlcome
+    <div className="app bg-black">
+      <Header />
+      <Body />
     </div>
   );
 }
