@@ -1,6 +1,17 @@
 # NetFlix Gpt
   - create app 
   - Configure the tailwind css 
+  Header
+  Routing of App
+  Login form  
+  signup Form
+  form Validation 
+  Use useRef Hook
+  Firebase Setup
+  Deploy our app to production
+  Create a Sign up USer Account
+  Implement Sign in user Api 
+  Create out Redux store with userSlice
 
 # Feature 
     - Header 
