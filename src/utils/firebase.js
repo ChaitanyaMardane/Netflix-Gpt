@@ -14,7 +14,7 @@ const firebaseConfig = {
   storageBucket: "netflixai-92a26.firebasestorage.app",
   messagingSenderId: "198494100446",
   appId: "1:198494100446:web:32447687f0c57732b29b4f",
-  measurementId: "G-HP003BNCKS"
+  measurementId: "G-HP003BNCKS",
 };
 
 // Initialize Firebase

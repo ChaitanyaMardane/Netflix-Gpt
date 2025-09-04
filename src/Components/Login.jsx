@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+// import {  } from "react";
 import { useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { checkDataValidation } from "../utils/validate";
 import { auth } from "../utils/firebase";
 import {
@@ -10,17 +10,17 @@ import {
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMG } from "../utils/constant";
 
 // react  arrow funtion  exoort component
 const Login = () => {
-  const dispatch=useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [signUp, setSignUp] = useState(false);
   const [isValid, setIsValid] = useState(null);
   const emailRef = useRef();
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
-  const fullNameRef= useRef();
+  const fullNameRef = useRef();
 
   const handleSubmit = (e) => {
     const email = emailRef.current.value;
@@ -42,20 +42,18 @@ const Login = () => {
             const user = userCredential.user;
             updateProfile(auth.currentUser, {
               displayName: fullNameRef.current.value,
-              
             })
               .then(() => {
-                  // console.log("User is signed in:", user);
-                        const { uid, email, displayName } = auth.currentUser; 
-                        dispatch(addUser({uid:uid , email:email, displayName:displayName}));
-                         navigate("/browse");
-                
+                // console.log("User is signed in:", user);
+                const { uid, email, displayName } = auth.currentUser;
+                dispatch(
+                  addUser({ uid: uid, email: email, displayName: displayName })
+                );
               })
               .catch((error) => {
                 // An error occurred
                 // ...
               });
-         
 
             // ...
           })
@@ -79,7 +77,6 @@ const Login = () => {
             // Signed in
             const user = userCredential.user;
             // console.log(user);
-             navigate("/browse");
 
             // ...
           })
@@ -87,7 +84,6 @@ const Login = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setIsValid(errorMessage);
-             navigate("/login");
             // console.log(isValid);
           });
       }
@@ -95,7 +91,13 @@ const Login = () => {
   };
 
   return (
-    <div className="main   flex justify-center   m-auto ">
+    <div className="main  realtive  flex justify-center   m-auto ">
+      <div className="absolute inset-0 w-full h-full bg-black z-1  bg-opacity-100 "></div>
+      <img
+        className="absolute z-0 inset-0 w-full h-full bg-cover opacity-50 bg-no-repeat bg-center"
+        src={BG_IMG}
+        alt=""
+      />
       <div className="z-0  absolute inset-0 bg-black  h-[70%] w-1/4 flex mx-auto mt-52 opacity-55 "></div>
       <form
         onSubmit={(e) => e.preventDefault()}
