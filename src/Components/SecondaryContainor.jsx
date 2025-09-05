@@ -3,13 +3,8 @@ import MovieList from "./MovieList";
 import { useSelector } from "react-redux";
 
 const SecondaryContainor = () => {
-  const movies = useSelector(
-    (store) => store.movie
-  );
-  if(!movies) return null;
-
-  // console.log("movieList");
-  // console.log(nowPlayingMovies);
+  const movies = useSelector((store) => store.movie);
+  if (!movies) return null;
 
   /*
   MovieList 
@@ -27,7 +22,6 @@ const SecondaryContainor = () => {
         <MovieList title="Popular Movies" movies={movies.popularMovies} />
         <MovieList title="Top Rated Movies" movies={movies.topRatedMovies} />
         <MovieList title="Top Rated Movies" movies={movies.upcomingMovies} />
-
       </div>
     </div>
   );

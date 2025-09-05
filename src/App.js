@@ -1,13 +1,9 @@
 // import logo from './logo.svg';
+
 import { Provider, useDispatch } from "react-redux";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import {
-  createBrowserRouter,
-  Outlet,
-  RouterProvider,
-  // useNavigate,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Browse from "./Components/Browse";
 import Login from "./Components/Login";
 
@@ -23,7 +19,6 @@ function App() {
         </>
       ),
       children: [
- 
         {
           path: "/login",
           element: <Login />,
@@ -33,7 +28,7 @@ function App() {
     {
       path: "/browse",
       element: <Browse />,
-    }
+    },
   ]);
 
   return (

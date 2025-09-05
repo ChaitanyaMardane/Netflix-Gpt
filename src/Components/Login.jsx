@@ -35,7 +35,6 @@ const Login = () => {
       );
       setIsValid(validationError);
       if (isValid === null) {
-        // console.log("Creating user...");
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed up
@@ -44,7 +43,6 @@ const Login = () => {
               displayName: fullNameRef.current.value,
             })
               .then(() => {
-                // console.log("User is signed in:", user);
                 const { uid, email, displayName } = auth.currentUser;
                 dispatch(
                   addUser({ uid: uid, email: email, displayName: displayName })
@@ -58,8 +56,6 @@ const Login = () => {
             // ...
           })
           .catch((error) => {
-            // console.log(isValid);
-
             const errorCode = error.code;
             const errorMessage = error.message;
             setIsValid(errorCode + "-" + errorMessage);
@@ -76,7 +72,6 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            // console.log(user);
 
             // ...
           })
@@ -84,7 +79,6 @@ const Login = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setIsValid(errorMessage);
-            // console.log(isValid);
           });
       }
     }
