@@ -7,10 +7,10 @@ const GptSearch = () => {
   const { movieList, movieNames } = searchMovies;
 
   return (
-    <div className=" h-full w-full">
+    <div className="  w-full">
       <GptSearchBar />
-      <div className=" bg-black h-max w-screen ">
-        <div className=" -mt-[30%]  ">
+      <div className=" ">
+        <div className=" -mt-[80%] md:-mt-[20%] relative w-screen bg-black bg-opacity-80   ">
           {!movieNames && null}
           {!movieList && null}
           {movieNames?.map((movieName) => {

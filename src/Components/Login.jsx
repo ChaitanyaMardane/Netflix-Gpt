@@ -88,25 +88,25 @@ const Login = () => {
     <div className="main  realtive  flex justify-center   m-auto ">
       <div className="absolute inset-0 w-full h-full bg-black z-1  bg-opacity-100 "></div>
       <img
-        className="absolute z-0 inset-0 w-full h-full bg-cover opacity-50 bg-no-repeat bg-center"
+        className="absolute z-0 inset-0 w-full h-full bg-cover opacity-50 bg-no-repeat  bg-center"
         src={BG_IMG}
         alt=""
       />
-      <div className="z-0  absolute inset-0 bg-black  h-[70%] w-1/4 flex mx-auto mt-52 opacity-55 "></div>
+      <div className="z-0  absolute inset-0 bg-black w-[80vw]  h-[70%]  md:h-[70%]  md:w-1/4 flex mx-auto mt-40 md:mt-52 opacity-55 "></div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="form z-10 absolute inset-0  p-8  rounded-md flex flex-col gap-4 border-gray-900 border-2 border-opacity-95 h-[70%] w-1/4   mx-auto mt-52"
+        className="form z-10 absolute inset-0 px-8 mx-auto  md:p-8 w-[80vw] md:w-1/4 rounded-md flex flex-col gap-2 md:gap-4  border-gray-900 border-2 border-opacity-95 h-[70%] md:h-[70%] w-1/4 mt-40  md:mt-52"
       >
         {signUp ? (
-          <h1 className="title font-bold text-white  text-3xl">Sign Up</h1>
+          <h1 className="title font-bold text-white text-xl md:text-3xl mt-4 md:mt-0 ">Sign Up</h1>
         ) : (
-          <h1 className="title font-bold text-white  text-3xl">Sign in</h1>
+          <h1 className="title font-bold text-white   text-xl mt-4  md:text-3xl">Sign in</h1>
         )}
 
         {signUp && (
           <input
             ref={fullNameRef}
-            className="mt-10 h-12 p-2 bg-black bg-opacity-0 border-white text-white border-2  w-full rounded-md"
+            className="  mt-2 md:mt-6  h-8 md:h-12 p-2 bg-black bg-opacity-0 border-white text-white border-2  w-full rounded-md"
             type="text"
             name="Full-Name"
             id="Full-Name"
@@ -117,8 +117,8 @@ const Login = () => {
           <input
             ref={emailRef}
             className={`${
-              !signUp && "mt-10"
-            } h-12 p-2 bg-black bg-opacity-0  text-white  border-white  border-2  w-full rounded-md`}
+              !signUp && " mt-4 md:mt-10"
+            } h-8 md:h-10  p-2 bg-black bg-opacity-0  text-white  border-white  border-2  w-full rounded-md`}
             type="text"
             name="email"
             id="email"
@@ -129,7 +129,7 @@ const Login = () => {
           {!signUp ? (
             <input
               ref={passwordRef}
-              className="h-12 p-2  w-full  text-white  bg-black bg-opacity-0 border-white  border-2  rounded-md"
+              className=" h-8 md:h-10  p-2  w-full  text-white  bg-black bg-opacity-0 border-white  border-2  rounded-md"
               type="password"
               name="password"
               id="password"
@@ -139,14 +139,14 @@ const Login = () => {
             <div className="flex flex-col gap-4">
               <input
                 ref={passwordRef}
-                className="h-12 p-2  w-full  text-white  bg-black bg-opacity-0 border-white  border-2  rounded-md"
+                className=" h-8 md:h-10  p-2  w-full  text-white  bg-black bg-opacity-0 border-white  border-2  rounded-md"
                 type="password"
                 name="create-password"
                 id="create-password"
                 placeholder="Create Password"
               />
               <input
-                className="h-12 p-2  w-full  text-white  bg-black bg-opacity-0 border-white  border-2  rounded-md"
+                className=" h-8 md:h-10  p-2  w-full  text-white  bg-black bg-opacity-0 border-white  border-2  rounded-md"
                 type="password"
                 ref={confirmPasswordRef}
                 name="confirm-password"
@@ -159,7 +159,7 @@ const Login = () => {
 
         <button
           onClick={handleSubmit}
-          className="bg-red-600 text-white h-12 font-bold w-full rounded-md"
+          className="bg-red-600 text-white h-10 md:py-2 font-bold w-full rounded-md"
         >
           {signUp ? "Sign Up" : "Sign In"}
         </button>
@@ -194,7 +194,7 @@ const Login = () => {
               className="text-lg text-white font-semibold hover:underline"
             >
               {" "}
-              <span className="text-zinc-500">Already registered?</span> Sign up
+              <span className="text-zinc-500 block md:inline-block">Already registered?</span> Sign up
               now.
             </Link>
           )}

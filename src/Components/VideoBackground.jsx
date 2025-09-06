@@ -9,9 +9,9 @@ const VideoBackground = ({ movieId }) => {
     "https://www.youtube.com/embed/" + key + "?&autoplay=1&mute=1&controls=0";
 
   return (
-    <div className="w-screen  h-[100h]   ">
+    <div className="w-screen  md:h-[100h]   ">
       <iframe
-        className="w-screen h-[100vh]  absolute top-0 left-0"
+        className="w-screen  mt-40 md:mt-0 aspect-video  absolute top-0 left-0"
         src={url}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "

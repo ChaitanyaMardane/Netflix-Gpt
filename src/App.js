@@ -15,7 +15,7 @@ function App() {
         <>
           <Header />
           <Outlet />
-          <Footer />
+          
         </>
       ),
       children: [

@@ -53,50 +53,48 @@ const Header = () => {
     dispatch(changeLanguage(language));
   };
   return (
-    <div className="  ">
-      <div className="   relative  ">
-        <img
-          className="absolute z-0 inset-0 w-screen h-screen bg-cover  bg-no-repeat bg-center opacity-60"
-          src={BG_IMG}
-          alt=""
-        />
-        <div className="  bg-black w-screen h-screen "></div>
+    <div className="    ">
+      <img
+        className="fixed z-0 inset-0 w-screen  h-full bg-cover   "
+        src={BG_IMG}
+        alt=""
+      />
+      <div className="  w-screen h-screen  "></div>
 
-        <div className=" absolute top-0 left-0 h-26 w-screen  py-8 flex justify-between  z-50  px-40 ">
-          <div className="logo  ">
-            <img className="h-16 w-48 object-cover" src={LOGO} alt="Logo" />
+      <div className=" absolute top-0 left-0 h-26 w-screen  py-4  md:py-8 flex flex-col md:flex-row md:justify-between  z-50  md:px-40 ">
+        <div className="logo  inline-block  md:h-16 md:w-48  px-40 md:px-0 pb-4 ">
+          <img className="  object-cover" src={LOGO} alt="Logo" />
+        </div>
+        <div className="lang_sign k flex justify-between  md:justify-normal px-4">
+          <button
+            className=" bg-purple-800 h-10 rounded-lg font-semibold px-4  mx-4"
+            onClick={handleGptSearchView}
+          >
+            {gptSearch ? "Homepage" : "Search Gpt"}
+          </button>
+          <div className="opacity-50">
+            {gptSearch && (
+              <select
+                className=" border border-gray-300 bg-black text-white p-1.5 rounded-md px-4 "
+                onChange={(e) => handleLanguage(e.target.value)}
+              >
+                {SUPPORTED_LANGUAGES.map((lang) => (
+                  <option key={lang.identifier} value={lang.identifier}>
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
-          <div className="lang_sign k  flex">
-            <button
-              className=" bg-purple-800 h-10 rounded-lg font-semibold px-4  mx-4"
-              onClick={handleGptSearchView}
-            >
-              {gptSearch ? "Homepage" : "Search Gpt"}
-            </button>
-            <div className="opacity-50">
-              {gptSearch && (
-                <select
-                  className=" border border-gray-300 bg-black text-white p-1.5 rounded-md px-4 "
-                  onChange={(e) => handleLanguage(e.target.value)}
-                >
-                  {SUPPORTED_LANGUAGES.map((lang) => (
-                    <option key={lang.identifier} value={lang.identifier}>
-                      {lang.name}
-                    </option>
-                  ))}
-                </select>
-              )}
-            </div>
 
-            <button
-              onClick={() =>
-                user === null ? navigate("/login") : handleSignOut()
-              }
-              className="mx-4 bg-red-600 text-white p-1.5 font-bold rounded-md h-10 "
-            >
-              {user === null ? "Sign in" : "Sign out"}
-            </button>
-          </div>
+          <button
+            onClick={() =>
+              user === null ? navigate("/login") : handleSignOut()
+            }
+            className="mx-4 bg-red-600 text-white p-1.5 font-bold rounded-md h-10 "
+          >
+            {user === null ? "Sign in" : "Sign out"}
+          </button>
         </div>
       </div>
     </div>

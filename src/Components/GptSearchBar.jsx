@@ -66,12 +66,12 @@ Return only the movie names in a single line, separated by commas, with no extra
 
   return (
     <div className=" absolute top-0 left-0 w-full h-screen z-10  ">
-      <div className=" p-2 m-auto h-20 w-3/5 mt-[15%] bg-black  rounded-lg ">
+      <div className=" p-2  m-auto h-20 w-11/12 md:w-2/5 md:mt-[15%] mt-[35%] bg-black  rounded-lg ">
         <form action="" className="   " onSubmit={(e) => e.preventDefault()}>
           <div className=" grid grid-cols-12 gap-2 mt-2  ">
             <input
               ref={searchInput}
-              className="col-span-9 bg-slate-700 h-12 my-auto mx-4 rounded-lg px-4 z-0"
+              className="  col-span-9 bg-slate-700 h-12  mx-4 rounded-lg px-4 z-0"
               type="text"
               placeholder={lang[language].gptSearchPlaceholder}
             />
